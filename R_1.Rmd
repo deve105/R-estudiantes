@@ -1,0 +1,12 @@
+---
+title: "R-Parte1"
+author: "Daniel Enriquez"
+date: "2023-12-28"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
