@@ -89,7 +89,6 @@ dev1<-c(dev.m[1,]) #reemplazar vector por la fila 1
 dev1
 rm(dev1) #elimina dev1
 dev1<-rep(x=10, each=5) #5 repeticiones del valor 10
-<<<<<<< HEAD
 dev1[dev1==10]<-"diez" #Operacion logica
 dev1
 ```
@@ -121,7 +120,6 @@ dev.m2
 dev.m2<-matrix(rep(c(1:6)), nrow=6, ncol=6)
 is.matrix(dev.m2)
 class(dev.m2)
-dev.m2
 #Conversión a DF
 dev.df<-as.data.frame(dev.m2)
 #renombrar las columnas
@@ -129,4 +127,4 @@ colnames(dev.df)<-c("A", "B", "C", "D", "E", "F")
 dev.df
 #dev.df[dev.df==1]<-"NA" #Reemplazar 1 por NA (not available)
 
-````
+```
