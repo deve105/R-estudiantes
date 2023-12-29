@@ -1,6 +1,6 @@
 ---
 title: "Curso Básico R - parte1"
-author: "Daniel Enriquez"
+author: "Daniel Enriquez-Vera"
 date: "2023-12-28"
 output:
   beamer_presentation: default
