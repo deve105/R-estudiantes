@@ -89,6 +89,7 @@ dev1<-c(dev.m[1,]) #reemplazar vector por la fila 1
 dev1
 rm(dev1) #elimina dev1
 dev1<-rep(x=10, each=5) #5 repeticiones del valor 10
+<<<<<<< HEAD
 dev1[dev1==10]<-"diez" #Operacion logica
 dev1
 ```
@@ -130,3 +131,8 @@ dev.df
 
 ````
 
+=======
+dev1
+```
+
+>>>>>>> origin/DEV-mac
