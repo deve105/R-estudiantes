@@ -2,8 +2,64 @@
 title: "R-Parte1"
 author: "Daniel Enriquez"
 date: "2023-12-28"
-output: pdf_document
+output: ioslides_presentation
 ---
+## **Directorio de Trabajo** ~*(wd, working directory)*~
+
+* Dirección o ubicación (carpeta o folder) para importar/exportar/cargar/guardar archivos.
+* Tip: *Evitar espacios, tildes o carácteres en el nombre.*
+
+* Comandos útiles:
+  * `getwd()`: Cuál es la dirección actual?
+  * `setwd()`: Definir la dirección
+  * `dir()`: Generar una lista de archivos y carpetas en el *wd*.
+  + `ls()`: Genera una lista de objetos abiertos en R.
+
+## **Ejemplo N1**
+
+Los comentarios dentro del código son incluidos con `#`.
+
+```{r}
+#Ejemplo en MacOS, en Windows "C:/Docum..")
+setwd("/Users/denriquez/Documents/Rstats/RepoGit/R-estudiantes") 
+#Comprobar el wd
+getwd()  
+#Lista de archivos en wd
+dir()
+
+```
+## **Objetos**
+
+Ojo: Cada `Función` trabaja con un tipo específico de Obj.  `getClassDef`
+Tipos de Obj.:
+
+  * **Vectores:** números, carácteres, fórmulas.
+  
+  * **Matrices:** varias columnas del mismo tipo y longitud.
+  
+  * ***Arrays:*** como Matrices pero con más dimensiones.
+  
+  * ***Data frames:*** clásica base de datos con columnas de diferentes tipos.
+  
+  * **Listas:** lista de objetos de diferente tipo.
+  
+  * **Factores:** Un vector con niveles.
+  
+  * **Obj. Avanzados:** S3, S4 (Listas con información interconectada).  Ejemplo: plots o información genética.
+
+## **Operaciones básicas**
+* Crear un vector (`<-` o `=`), concatenar  (`c()`) y mostrar resultados. *Valores repetidos: `rep`
+```{R}
+dev<-c(1,2,3,4,5,6,7,8,9,10)
+dev
+```
+* Características del objeto: 
+```{R, results='hold'}
+length(dev) #longitud
+str(dev) #resumen o estructura
+```
+* Otros: `class()`, `mode()`.
+
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
