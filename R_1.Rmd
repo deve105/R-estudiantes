@@ -122,9 +122,6 @@ is.matrix(dev.m2)
 class(dev.m2)
 #Conversión a DF
 dev.df<-as.data.frame(dev.m2)
-#renombrar las columnas
-colnames(dev.df)<-c("A", "B", "C", "D", "E", "F")
-dev.df
-#dev.df[dev.df==1]<-"NA" #Reemplazar 1 por NA (not available)
+class(dev.df)
 
 ```
