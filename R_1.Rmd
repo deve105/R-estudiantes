@@ -130,9 +130,3 @@ dev.df
 #dev.df[dev.df==1]<-"NA" #Reemplazar 1 por NA (not available)
 
 ````
-
-=======
-dev1
-```
-
->>>>>>> origin/DEV-mac
