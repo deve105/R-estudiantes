@@ -1,8 +1,10 @@
 ---
-title: "R-Parte1"
+title: "Curso Básico R - parte1"
 author: "Daniel Enriquez"
 date: "2023-12-28"
-output: ioslides_presentation
+output:
+  beamer_presentation: default
+  ioslides_presentation: default
 ---
 ## **Directorio de Trabajo** ~*(wd, working directory)*~
 
@@ -116,12 +118,59 @@ dev.m2
 ## **Bases de Datos ** ~*(DF, data frame)*~
 ```{R, results='hold'}
 #¿Qué tipo de variable tenemos?
-#rm(list=ls()) #limpiar el entorno
+
 dev.m2<-matrix(rep(c(1:6)), nrow=6, ncol=6)
 is.matrix(dev.m2)
 class(dev.m2)
 #Conversión a DF
 dev.df<-as.data.frame(dev.m2)
 class(dev.df)
+dev.df[dev.df==6]<-"NA" #remplazar 6 por NA (not available)
+dev.df$V6 #Acceder a la variable o ex-columna 6
+```
+```{R, results='hold', eval=FALSE}
+rm(list=ls()) #limpiar todo el entorno
+```
 
+## **Bases de Datos(II) ** ~*(DF, data frame)*~
+```{R warning=FALSE, results='hold', eval=FALSE}
+#Guardar todos los objetos
+save(list=ls(), file="prueba.RData") 
+#Cargar todos los objetos
+load("prueba.RData")
+fix() #Editar objetos
+rm() #eliminar objetos
+```
+R incluye un DF de prueba: `iris`
+```{R warning=FALSE, results='hold'}
+summary(iris) #estadísticas básicas
+```
+## **Bases de Datos(III) ** ~*(DF, data frame)*~
+```{R warning=FALSE, results='hold'}
+#un boxplot
+boxplot(formula=iris$Petal.Length~iris$Species)
+```
+
+## **Bases de Datos(IV) ** ~*(DF, data frame)*~
+Estadísticas Básicas
+```{R warning=FALSE, results='hold'}
+#Extraer solo información de una especie
+setosa<-iris[which(iris$Species=="setosa"),]
+#Correlación entre 'length' y 'width'
+cor.test(x=setosa$Sepal.Length, y=setosa$Sepal.Width)
+```
+## **Visualización de Datos** ~*(Plotting)*~
+
+```{R warning=FALSE, results='hold'}
+#Plot correlación entre 'length' y 'width'
+plot(x=setosa$Sepal.Length, y=setosa$Sepal.Width, main="Sépalos",  
+     xlab="Longitud", ylab="Ancho", pch=16, cex=1, col="blue")
+abline(reg=lm(setosa$Sepal.Width~setosa$Sepal.Length), col="red", lwd=2)
+
+```
+## **Análisis de la Varianza** ~*(ANOVA)*~
+Para usar ANOVA es necesario >2 grupos y distribuciòn normal.
+Ha: Existen diferencias en el tamaño del sépalo entre las 3 especies.
+```{R warning=FALSE, results='hold'}
+aov(formula=iris[["Sepal.Length"]]~iris[["Species"]])
 ```
