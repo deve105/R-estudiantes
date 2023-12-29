@@ -116,7 +116,7 @@ dev.m2
 ## **Bases de Datos ** ~*(DF, data frame)*~
 ```{R, results='hold'}
 #¿Qué tipo de variable tenemos?
-rm(list=ls()) #limpiar el entorno
+#rm(list=ls()) #limpiar el entorno
 dev.m2<-matrix(rep(c(1:6)), nrow=6, ncol=6)
 is.matrix(dev.m2)
 class(dev.m2)
