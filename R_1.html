@@ -3256,7 +3256,7 @@ dir()</pre>
 </article></slide><slide class=""><hgroup><h2><strong>Operaciones básicas</strong></h2></hgroup><article  id="operaciones-básicas">
 
 <ul>
-<li>Crear un vector (<code>&lt;-</code> o <code>=</code>), concatenar (<code>c()</code>) y mostrar resultados. *Valores repetidos: <code>rep</code></li>
+<li>Crear un vector (<code>&lt;-</code> o <code>=</code>), concatenar (<code>c()</code>) y mostrar resultados. *para valores repetidos: <code>rep</code></li>
 </ul>
 
 <pre class = 'prettyprint lang-r'>dev&lt;-c(1,2,3,4,5,6,7,8,9,10)
@@ -3276,7 +3276,58 @@ str(dev) #resumen o estructura</pre>
 
 <ul>
 <li>Otros: <code>class()</code>, <code>mode()</code>.</li>
-</ul></article></slide>
+</ul>
+
+</article></slide><slide class=""><hgroup><h2><strong>Operaciones básicas(II)</strong></h2></hgroup><article  id="operaciones-básicasii">
+
+<p>Manipular un vector.</p>
+
+<pre class = 'prettyprint lang-r'>dev[4] #Seleccionar el 4to elemento
+dev[5:8] #Seleccionar del 5to al 8vo elemento.
+dev2&lt;-dev[-6] #Eliminar el 6to elemento
+dev2 #Mostrar el resultado de la operación anterior</pre>
+
+<pre >## [1] 4
+## [1] 5 6 7 8
+## [1]  1  2  3  4  5  7  8  9 10</pre>
+
+</article></slide><slide class=""><hgroup><h2><strong>Operaciones básicas(III)</strong></h2></hgroup><article  id="operaciones-básicasiii">
+
+<p>Crear una matriz.</p>
+
+<pre class = 'prettyprint lang-r'>dev.m&lt;-matrix(data=11:20, nrow=2, ncol=5) #2 filas y 5 columnas
+is.matrix(dev.m) # es dev.m una matriz?
+dev.m #Mostrar la matriz
+dim(dev.m) #dimensiones. (2 x 5)
+dev.m[,3] #Mostrar la 3ra columna
+dev.m[2,] #Mostrar la 2da fila
+dev.m[2,3] #Mostrar un elemento con las coordenadas</pre>
+
+<pre >## [1] TRUE
+##      [,1] [,2] [,3] [,4] [,5]
+## [1,]   11   13   15   17   19
+## [2,]   12   14   16   18   20
+## [1] 2 5
+## [1] 15 16
+## [1] 12 14 16 18 20
+## [1] 16</pre>
+
+</article></slide><slide class=""><hgroup><h2><strong>Operaciones básicas(IV)</strong></h2></hgroup><article  id="operaciones-básicasiv">
+
+<p>Manipular una matriz.</p>
+
+<pre class = 'prettyprint lang-r'>dev.m[,2:4] #Mostrar valores de las columnas 2 a 4
+dev1&lt;-c(dev, dev.m[2,]) #concatenar el vector dev a la fila 2.
+dev1
+dev1&lt;-c(dev.m[1,]) #reemplazar vector por la fila 1
+dev1
+rm(dev1) #elimina dev1</pre>
+
+<pre >##      [,1] [,2] [,3]
+## [1,]   13   15   17
+## [2,]   14   16   18
+##  [1]  1  2  3  4  5  6  7  8  9 10 12 14 16 18 20
+## [1] 11 13 15 17 19</pre></article></slide>
 
 
   <slide class="backdrop"></slide>

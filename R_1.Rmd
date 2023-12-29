@@ -48,7 +48,7 @@ Tipos de Obj.:
   * **Obj. Avanzados:** S3, S4 (Listas con información interconectada).  Ejemplo: plots o información genética.
 
 ## **Operaciones básicas**
-* Crear un vector (`<-` o `=`), concatenar  (`c()`) y mostrar resultados. *Valores repetidos: `rep`
+* Crear un vector (`<-` o `=`), concatenar  (`c()`) y mostrar resultados. *para valores repetidos: `rep`
 ```{R}
 dev<-c(1,2,3,4,5,6,7,8,9,10)
 dev
@@ -60,9 +60,35 @@ str(dev) #resumen o estructura
 ```
 * Otros: `class()`, `mode()`.
 
-
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
+## **Operaciones básicas(II)**
+Manipular un vector.
+```{R, results='hold'}
+dev[4] #Seleccionar el 4to elemento
+dev[5:8] #Seleccionar del 5to al 8vo elemento.
+dev2<-dev[-6] #Eliminar el 6to elemento
+dev2 #Mostrar el resultado de la operación anterior
 ```
-
+## **Operaciones básicas(III)**
+Crear una matriz.
+```{R, results='hold'}
+dev.m<-matrix(data=11:20, nrow=2, ncol=5) #2 filas y 5 columnas
+is.matrix(dev.m) # es dev.m una matriz?
+dev.m #Mostrar la matriz
+dim(dev.m) #dimensiones. (2 x 5)
+dev.m[,3] #Mostrar la 3ra columna
+dev.m[2,] #Mostrar la 2da fila
+dev.m[2,3] #Mostrar un elemento con las coordenadas
+```
+## **Operaciones básicas(IV)**
+Manipular una matriz.
+```{R, results='hold'}
+dev.m[,2:4] #Mostrar valores de las columnas 2 a 4
+dev1<-c(dev, dev.m[2,]) #concatenar el vector dev a la fila 2.
+dev1
+dev1<-c(dev.m[1,]) #reemplazar vector por la fila 1
+dev1
+rm(dev1) #elimina dev1
+dev1<-rep(x=10, each=5) #5 repeticiones del valor 10
+dev1
+```
 
