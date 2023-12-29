@@ -4,7 +4,6 @@ author: "Daniel Enriquez"
 date: "2023-12-28"
 output:
   beamer_presentation: default
-  ioslides_presentation: default
 ---
 ## **Directorio de Trabajo** ~*(wd, working directory)*~
 
