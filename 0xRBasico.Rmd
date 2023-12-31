@@ -25,12 +25,18 @@ update.packages(ask=FALSE) #actualizar paquetes
 ## **Instalar desde Github/Bioconductor**
 * Es necesario tener `devtools` para instalar desde Github.
 ```{R, results='hold', eval=FALSE}
-if(! "devtools" %in% installed.packages()) {install.packages("devtools")}
+if(! "devtools" %in% installed.packages())   
+  {install.packages("devtools")}
 devtools::install_github("paquete_de_github")
 ```
 * Bioconductor: Análisis de data genómica
 ```{R, results='hold', eval=FALSE}
-if(! "devtools" %in% installed.packages()) {install.packages("devtools")}
-devtools::install_github("paquete_de_github")
+if (!requireNamespace("BiocManager"))   
+  install.packages("BiocManager")
+BiocManager::install(pkgs=c("pkg1", "pkg2"))
+?BiocManager::install() #Actualizar paquetes
+#Biocmanager
+if (!requireNamespace("BiocManager"))   
+  install.packages("BiocManager")
 ```
 

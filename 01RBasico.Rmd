@@ -15,6 +15,7 @@ output:
   * `setwd()`: Definir la dirección
   * `dir()`: Generar una lista de archivos y carpetas en el *wd*.
   + `ls()`: Genera una lista de objetos abiertos en R.
+  * file.choose()
 
 ## **Ejemplo N1**
 
