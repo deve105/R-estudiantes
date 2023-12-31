@@ -1,5 +1,5 @@
 ---
-title: "Curso Básico R - parte1"
+title: "Curso Básico R - parte2"
 author: "Daniel Enriquez-Vera"
 date: "2023-12-28"
 output:
@@ -31,12 +31,12 @@ devtools::install_github("paquete_de_github")
 ```
 * Bioconductor: Análisis de data genómica
 ```{R, results='hold', eval=FALSE}
-if (!requireNamespace("BiocManager"))   
-  install.packages("BiocManager")
-BiocManager::install(pkgs=c("pkg1", "pkg2"))
-?BiocManager::install() #Actualizar paquetes
 #Biocmanager
 if (!requireNamespace("BiocManager"))   
   install.packages("BiocManager")
+BiocManager::install(pkgs=c("pkg1", "pkg2"))
+BiocManager::install() #Actualizar paquetes
+
+
 ```
 
